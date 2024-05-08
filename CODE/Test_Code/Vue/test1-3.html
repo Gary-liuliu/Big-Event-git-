@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test1-3</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table border="1" cellspacing="0" width="60%">
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>成绩</th>
+                <th>等级</th>
+            </tr>
+            <tr align="center" v-for="(user,index) in usera">
+                <td>{{index + 1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>
+                    <span v-if="user.gender == 1" style="color: brown;">男</span>
+                    <span v-else="user.gender == 0" style="color: pink;">女</span>
+                </td>
+                <td>{{user.score}}</td>
+                <td>
+                    <span v-if="user.score >= 90">优秀</span>
+                    <span v-if="user.score < 90 && user.score >= 60">及格</span>
+                    <span v-if="user.score < 60" style="color: red;">不及格</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            usera:[
+                {name:'Tom',age:20,gender:1,score:58},
+                {name:'Jerry',age:22,gender:0,score:89},
+                {name:'Jack',age:21,gender:1,score:90},
+                {name:'Mary',age:20,gender:0,score:60}
+            ]
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/axios.min.js"></script>
+</head>
+
+<body>
+    <input type="button" value="获取数据" onclick="get()">
+    <input type="button" value="删除数据" onclick="post()">
+</body>
+<script>
+    function get() {
+        axios.get(url, params)
+            .then(res => {
+                // res.data里的是返回的主题数据
+                console.log(res)
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    }
+    function post() {
+    }
+</script>
+
+</html>

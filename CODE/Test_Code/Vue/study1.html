@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js\vue.js"></script>
+</head>
+<!-- v-model v-bind v-on -->
+<body>
+    <div id="app">
+        <input type="text" v-model="message">
+        {{message}}
+        <br>
+    </div>
+    <div id="appp">
+        <input type="text" v-model="url">
+        {{url}}
+        <br>
+        <a v-bind:href="url">点击</a>
+        <!-- <a :href="url">点击</a> -->
+    </div>
+    <div id="ap">
+        <input type="button" value="dian" v-on:click="handle()">
+        <!-- <input type="button" value="dian" @click="handle()"> -->
+    </div>
+</body>
+<script>
+        new Vue({
+        el:'#app',
+        data:{
+            message:'hello vue'
+        }
+    })
+    new Vue({
+        el:'#appp',
+        data:{
+            url:"http://www.baidu.com"
+        }
+    })
+    new Vue({
+        el:'#ap',
+        data:{
+            
+        },
+        methods:{
+            handle:function(){
+                alert("sda")
+            }
+        }
+    })
+</script>
+</html>
